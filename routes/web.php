@@ -26,6 +26,7 @@ Route::get('data/{any}', function () {
 
 Route::get('/linkstorage', function () {
     Artisan::call('storage:link --relative');
+    return response()->json(['message' => 'Berhasil menghubungkan storage.'], 200);
 });
 
 /*
