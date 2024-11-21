@@ -1,0 +1,540 @@
+.header {
+    height: 60px;
+    background-color: #002147;
+    color: #C3D6DD;
+}
+
+.logo > img {
+    height: 60px;
+    width: 60px;
+}
+
+.sosmed {
+    color: #C3D6DD;
+    transform: scale(1.1);
+    transition: all .4s ease;
+}
+
+.sosmed:hover {
+    color: #fdc800;
+}
+
+.navbar-brand > img {
+    width: 50px;
+}
+
+.nav-link {
+    font-weight: 600;
+    color: #002147;
+    transition: all .4s ease;
+}
+
+.nav-link:hover {
+    color: #fdc800;
+}
+
+.carousel-item {
+    max-height: 95vh;
+}
+
+.carousel-item > .img {
+    background-color: #002147;
+}
+
+.carousel-item > .img > img {
+    opacity: 0.3;
+}
+
+.carousel-item > .desc {
+    top: 200px;
+    left: 200px;
+    color: #eee;
+    text-shadow: 2px 2px rgba(0, 33, 71, 0.7);
+    z-index: 99;
+}
+
+.carousel-item > .desc > h2 {
+    animation: h2 1.4s ease .8s;
+}
+
+.carousel-item > .desc > p {
+    animation: p 1.4s ease .8s;
+}
+
+.pplg {
+    background: rgba(0, 33, 71, 1);
+    color: #eee;
+    margin-top: -70px;
+    z-index: 99;
+    border: 1px solid #eee;
+    /* border-left: 1px solid #eee; */
+    transition: all .7s ease;
+}
+
+.pplg:hover > div > h3 {
+    transition: all .7s ease;
+}
+
+.pplg > i {
+    transform: scale(2);
+    transition: all .7s ease;
+    color: #fdc800;
+}
+
+.pplg:hover > div > h3 {
+    color: #fdc800;
+}
+
+.pplg:hover > i {
+    transform: scale(2.5);
+}
+
+.title {
+    color: #002147;
+}
+
+.subtitle {
+    color: #4A565C;
+}
+
+#about > .row > .col-md-6:nth-child(1) > p:nth-child(3) {
+    text-align: justify;
+}
+
+#about > .row {
+    min-height: 100vh;
+}
+
+#keahlian {
+    padding-top: 5rem;
+    margin-bottom: 4rem;
+}
+
+.skill-icon, .title-icon {
+    color: #002147;
+    transition: all .5s ease;
+}
+
+.skill:hover .skill-icon {
+    color: #fdc800;
+}
+
+#mapel {
+    padding: 0 7rem;
+    padding-top: 5rem;
+    background: #F5F5F5;
+    min-height: 90vh;
+}
+
+.card-image {
+    background: rgba(0, 33, 71, 1);
+}
+
+.card-image img {
+    transition: all 0.4s ease;
+}
+
+.card-image:hover img {
+    opacity: 0.6;
+}
+
+.link {
+    color: #eee;
+    position: absolute;
+    padding-top: 5px;
+    top: 28%;
+    left: 44%;
+    border-radius: 50%;
+    border: 1px solid #fdc800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
+    opacity: 0;
+    transition: all .4s ease;
+}
+
+.a {
+    color: white;
+}
+
+.card-image:hover .link {
+    opacity: 1;
+    z-index: 99;
+}
+
+#video {
+    padding-top: 5rem;
+    background-color: #F5F5F5;
+}
+
+#video > .video {
+    background-color: #002147;
+}
+
+#video > .video > img {
+    max-height: 88vh;
+    opacity: 0.6;
+    height: 100%;
+}
+
+.video {
+    height: 88vh;
+}
+
+.profil {
+    z-index: 99;
+    min-height: 88vh;
+    padding-top: 6rem;
+    color: #F5F5F5;
+}
+
+.title-video {
+    color: white;
+    z-index: 99;
+}
+
+.desc-video {
+    color: white;
+    z-index: 99;
+}
+
+@keyframes h2 {
+    0% {
+        transform: translateY(-300px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes p {
+    0% {
+        transform: translateX(-400px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes btn {
+    0% {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn-yellow {
+    background-color: #fdc800;
+    color: #002147;
+    border: 1px solid #fdc800;
+    transition: all .4s ease;
+    animation: btn 1.4s ease;
+    animation-delay: .5s;
+}
+
+.btn-yellow:hover {
+    background-color: transparent;
+    color: #fdc800;
+    border: 1px solid #fdc800;
+}
+
+.link-yellow {
+    background-color: #fdc800;
+    color: #002147;
+    border: 1px solid #fdc800;
+    transition: all .4s ease;
+}
+
+.link-yellow:hover {
+    background-color: transparent;
+    color: #fdc800;
+    border: 1px solid #fdc800;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #4A565C;
+    color: #fdc800;
+    margin: 0 auto;
+    margin-top: 2rem;
+    text-decoration: none;
+    transition: all .4s ease;
+}
+
+.play-button:hover {
+    border: 1px solid #fdc800;
+    color: #eee;
+}
+
+.lightbox {
+    /* Default to hidden */
+    display: none;
+  
+    /* Overlay entire screen */
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    /* A bit of padding around image */
+    padding: 1em;
+  
+    /* Translucent background */
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Unhide the lightbox when it's the target */
+  .lightbox:target {
+    display: block;
+  }
+  
+  .navigasi-bar {
+    z-index: 100;
+  }
+  
+  .lightbox iframe {
+    /* Full width and height */
+    display: block;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    margin-top: 8rem;
+  
+    /* Size and position background image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: video 1s ease;
+  }
+
+  #article {
+    background: #F5F5F5;
+  }
+
+  #artikel {
+    padding-top: 5rem;
+    min-height: 80vh;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-button-prev, .swiper-button-next {
+    transform: scale(.6);
+    color: #4A565C;
+    opacity: 0.3;
+    transition: all .3s ease;
+  }
+
+  .swiper-button-next:hover, .swiper-button-prev:hover {
+    color: #fdc800;
+    opacity: 1;
+  }
+
+  #guru {
+    padding-top: 5rem;
+  }
+
+  .div-img {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  .div-img > img {
+    object-fit: cover;
+    height: 100%;
+    transition: all .7s ease;
+  }
+
+  .div-img:hover > img {
+    transform: scale(1.13);
+  }
+
+  .nama-guru {
+    font-weight: 600;
+  }
+
+  .jabatan-guru {
+    color: #4A565C;
+    margin-top: -14px;
+  }
+
+  .garis-bawah {
+    width: 40px;
+    height: 4px;
+    border-bottom: 4px solid #fdc800;
+  }
+
+  #review {
+    margin-top: 7rem;
+    min-height: 100vh;
+    background-color: rgba(253, 200, 0, 1);
+  }
+
+  #review > .container {
+    padding-top: 7rem;
+  }
+
+  .banner {
+    height: 14rem;
+  }
+
+  .banner > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .iklan {
+    background-color: #002147;
+    color: #eee;
+    margin-left: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  footer {
+    background: #002147;
+    color: #F5F5F5;
+  }
+  /* #review ::-webkit-scrollbar {
+    display: none;
+  }
+  #review ::-webkit-scrollbar-thumb {
+    display: none;
+  }
+  #review ::-webkit-scrollbar-track {
+    display: none;
+  } */
+
+  @keyframes video {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+  }
+
+
+
+  @keyframes pulse {
+    to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+  }
+      
+
+@media screen and (max-width: 576px) {
+    .carousel-item > .desc {
+        top: 50px;
+        left: 50px;
+        padding: 1rem;
+    }
+
+    .profil {
+        padding-top: 7rem;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .lightbox iframe {
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    .pplg {
+        margin-top: 0;
+    }
+
+    .btn-blue {
+        background-color: #002147;
+        color: #fdc800;
+        border: 1px solid #002147;
+        transition: all .4s ease;
+    }
+
+    .btn-blue:hover {
+        background-color: transparent;
+        color: #002147;
+        border: 1px solid #002147;
+    }
+
+    
+
+    #skill {
+        margin-top: 4rem;
+    }
+
+    #about {
+        padding-top: 5rem;
+    }
+
+    #about > .row > .col-md-6:nth-child(1) {
+        padding-bottom: 2rem;
+    }
+
+    #mapel {
+        padding: 0 2rem;
+        
+    }
+
+    #mapel > .row > .col-md-3  {
+        margin: 1rem 0;
+    }
+
+    #guru {
+        padding: 0 2rem;
+    }
+
+    #guru > .row > .col-md-3 {
+        margin: 1rem 0;
+    }
+
+    .iklan {
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+        height: 14rem;
+        margin-top: 3rem;
+    }
+
+    .review {
+        padding-bottom: 2rem;
+    }
+
+    footer > .container > .row > .col-md-4:nth-child(2) {
+        margin-top: 1.6rem;
+    }
+
+    footer > .container {
+        padding: 0 1rem;
+    }
+}
