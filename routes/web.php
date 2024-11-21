@@ -14,6 +14,7 @@ use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SoftwareController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FrontController;
+use Illuminate\Support\Facades\Artisan;
 
 Route::get('data', function () {
     return redirect()->back();
@@ -22,6 +23,10 @@ Route::get('data', function () {
 Route::get('data/{any}', function () {
     return redirect()->back();
 })->where('any', '.*');
+
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link --relative');
+});
 
 /*
 |--------------------------------------------------------------------------
