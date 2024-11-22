@@ -7,9 +7,9 @@
     <main class="pt-24">
         <header>
             <nav class="fixed top-0 w-full z-50">
-                <div class="flex justify-between items-center h-16 md:px-20 px-4 text-black bg-white" id="nav">
+                <div class="flex justify-between items-center h-18 py-2 md:px-20 px-4 py-2 text-black bg-white" id="nav">
                     <div class="logo">
-                        <img src="{{asset('img/logo.png')}}" alt="" class="w-12 h-12" />
+                        <img src="{{asset('logo.png')}}" alt="" class="w-12 h-12" />
                     </div>
                     <div class="flex gap-4 max-md:hidden">
                         <a href="/#">

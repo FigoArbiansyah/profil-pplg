@@ -22,9 +22,20 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
     />
-    <link rel="shortcut icon" href="{{ asset('img/logo.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon">
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <meta name="description" content="Pengembangan Perangkat Lunak dan Gim - Temukan artikel, berita, dan informasi terkini tentang dunia perangkat lunak dan gim.">
+    <meta name="keywords" content="perangkat lunak, gim, artikel, berita, teknologi, pengembangan perangkat lunak">
+    <meta name="author" content="Dudung Zulkipli">
+    <meta property="og:title" content="Pengembangan Perangkat Lunak dan Gim">
+    <meta property="og:description" content="Temukan artikel, berita, dan informasi terkini tentang dunia perangkat lunak dan gim.">
+    <meta property="og:image" content="{{ asset('logo.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pengembangan Perangkat Lunak dan Gim">
+    <meta name="twitter:description" content="Temukan artikel, berita, dan informasi terkini tentang dunia perangkat lunak dan gim.">
+    <meta name="twitter:image" content="{{ asset('logo.png') }}">
     <style>
       * {
         font-family: "Poppins", sans-serif !important;
@@ -689,6 +700,7 @@
                 src="{{ asset('storage/images/' . $software->images) }}"
                 class="w-full object-contain"
                 alt="{{ $software->alt }}"
+                title="{{ $software->alt }}"
               />
             </div>
             @endforeach
