@@ -42,7 +42,7 @@ class JumbotronController extends Controller
         }
 
         $images = time() . '.' . $request->images->extension();
-        $request->images->storeAs('public/images', $images);
+        $request->images->storeAs(env('APP_STORAGE_PATH'), $images);
 
         $data = new Jumbotron;
         $data->paragraph = $request->paragraph;
@@ -82,7 +82,7 @@ class JumbotronController extends Controller
 
         if ($images = $request->hasFile("images")) {
             $images = time() . '.' . $request->images->extension();
-            $request->images->storeAs('public/images', $images);
+            $request->images->storeAs(env('APP_STORAGE_PATH'), $images);
         } else {
             $images = $data->images;
         }

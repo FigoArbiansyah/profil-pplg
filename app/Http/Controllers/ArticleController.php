@@ -55,7 +55,7 @@ class ArticleController extends Controller
         }
 
         $images = time() . '.' . $request->images->extension();
-        $request->images->storeAs('public/images', $images);
+        $request->images->storeAs(env('APP_STORAGE_PATH'), $images);
 
         $data = new Article;
         $data->author = $request->author;
@@ -101,7 +101,7 @@ class ArticleController extends Controller
 
         if ($images = $request->hasFile("images")) {
             $images = time() . '.' . $request->images->extension();
-            $request->images->storeAs('public/images', $images);
+            $request->images->storeAs(env('APP_STORAGE_PATH'), $images);
         } else {
             $images = $data->images;
         }

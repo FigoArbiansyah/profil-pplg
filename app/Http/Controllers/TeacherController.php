@@ -49,7 +49,7 @@ class TeacherController extends Controller
 
         if ($images = $request->hasFile("images")) {
             $images = time() . '.' . $request->images->extension();
-            $request->images->storeAs('public/images', $images);
+            $request->images->storeAs(env('APP_STORAGE_PATH'), $images);
         }
 
         if ($banner = $request->hasFile("banner")) {
@@ -104,7 +104,7 @@ class TeacherController extends Controller
 
         if ($images = $request->hasFile("images")) {
             $images = time() . '.' . $request->images->extension();
-            $request->images->storeAs('public/images', $images);
+            $request->images->storeAs(env('APP_STORAGE_PATH'), $images);
         } else {
             $images = $data->images;
         }

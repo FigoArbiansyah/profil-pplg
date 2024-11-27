@@ -60,11 +60,11 @@ class StudentPortfolioController extends Controller
         $student_image = null;
         if ($request->hasFile("thumbnail")) {
             $thumbnail = time() . '.' . $request->thumbnail->extension();
-            $request->thumbnail->storeAs('/public/images', $thumbnail);
+            $request->thumbnail->storeAs(env('APP_STORAGE_PATH'), $thumbnail);
         }
         if ($request->hasFile("student_image")) {
             $student_image = time() . '.' . $request->student_image->extension();
-            $request->student_image->storeAs('/public/images', $student_image);
+            $request->student_image->storeAs(env('APP_STORAGE_PATH'), $student_image);
         }
 
         $data = new StudentPortfolio;
@@ -112,11 +112,11 @@ class StudentPortfolioController extends Controller
         $student_image = $data->student_image;
         if ($request->hasFile("thumbnail")) {
             $thumbnail = time() . '.' . $request->thumbnail->extension();
-            $request->thumbnail->storeAs('/public/images', $thumbnail);
+            $request->thumbnail->storeAs(env('APP_STORAGE_PATH'), $thumbnail);
         }
         if ($request->hasFile("student_image")) {
             $student_image = time() . '.' . $request->student_image->extension();
-            $request->student_image->storeAs('/public/images', $student_image);
+            $request->student_image->storeAs(env('APP_STORAGE_PATH'), $student_image);
         }
 
         $data->school_id = 1;

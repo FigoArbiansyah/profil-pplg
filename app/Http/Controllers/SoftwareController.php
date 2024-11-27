@@ -42,7 +42,7 @@ class SoftwareController extends Controller
         }
 
         $images = time() . '.' . $request->images->extension();
-        $request->images->storeAs('public/images', $images);
+        $request->images->storeAs(env('APP_STORAGE_PATH'), $images);
 
         $data = new Software;
         $data->images = $images;
@@ -79,7 +79,7 @@ class SoftwareController extends Controller
 
         if ($images = $request->hasFile("images")) {
             $images = time() . '.' . $request->images->extension();
-            $request->images->storeAs('public/images', $images);
+            $request->images->storeAs(env('APP_STORAGE_PATH'), $images);
         } else {
             $images = $data->images;
         }
