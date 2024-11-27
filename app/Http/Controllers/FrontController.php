@@ -74,6 +74,7 @@ class FrontController extends Controller
         $major = Major::latest()->first() ?? null;
         $studentsPortfolio = DB::table('student_portfolios')
                     ->orderBy('id', 'desc')
+                    ->whereNull('deleted_at')
                     ->paginate(9);
 
         return view("karya-siswa", compact("studentsPortfolio", "major"));
