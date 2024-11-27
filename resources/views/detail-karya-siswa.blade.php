@@ -32,9 +32,9 @@
 <body>
     <main>
         <section class="min-h-screen bg-[#FFD700] md:px-12 px-5"> <!-- Mengganti warna latar belakang menjadi kuning yang lebih cocok -->
-            <div class="grid md:grid-cols-4 md:gap-12 gap:6">
+            <div class="grid md:grid-cols-4 md:gap-12 gap:6 h-full">
                 <div class="md:col-span-1">
-                    <div class="relative max-md:max-w-full bg-white h-[30rem] rounded-b-full flex flex-col items-center justify-end gap-3 p-6">
+                    <div class="relative max-md:max-w-full bg-white h-[60%] rounded-b-full flex flex-col items-center justify-end gap-3 p-6">
                         <div class="text-center">
                             <h3 class="font-semibold text-xl">
                                 {{ $item->student_name }}
