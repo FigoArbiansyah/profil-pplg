@@ -14,6 +14,7 @@ use App\Http\Controllers\MapelController;
 use App\Http\Controllers\SoftwareController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\StudentPortfolioController;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('data', function () {
@@ -41,7 +42,7 @@ Route::get('/linkstorage', function () {
 */
 Route::get("/masuk-ke-dashboard", [AuthController::class, "login_view"]);
 Route::post("/masuk-ke-dashboard", [AuthController::class, "login_submit"]);
-Route::get("/logout", [AuthController::class, "logout"]);
+Route::post("/logout", [AuthController::class, "logout"]);
 
 // Route::view('/', 'index')->name('index');
 // Route::view("/artikel", "article")->name('article');
@@ -49,6 +50,8 @@ Route::get("/logout", [AuthController::class, "logout"]);
 Route::get("/", [FrontController::class, "index"]);
 Route::get("/artikel", [FrontController::class, "article"]);
 Route::get("/artikel/{id}", [FrontController::class, "detail_article"]);
+Route::get("/karya-siswa", [FrontController::class, "karya_siswa"]);
+Route::get("/karya-siswa/{id}", [FrontController::class, "detail_karya_siswa"]);
 
 Route::get('/admin-pplg', function () {
     return view('admin.pages.dashboard');
@@ -66,4 +69,5 @@ Route::prefix('/admin-pplg')->middleware('isLogin')->group(function () {
     Route::resource('teacher', TeacherController::class)->except(['show']);
     Route::resource('mapel', MapelController::class)->except(['show']);
     Route::resource('software', SoftwareController::class)->except(['show']);
+    Route::resource('karya-siswa', StudentPortfolioController::class)->except(['show']);
 });

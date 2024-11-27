@@ -2,7 +2,7 @@
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
-        <a href="index.html" class="app-brand-link">
+        <a href="/" class="app-brand-link">
             <span class="app-brand-text demo menu-text fw-bolder ms-2">PPLG</span>
         </a>
 
@@ -87,12 +87,18 @@
                 <div data-i18n="Analytics">Software</div>
             </a>
         </li>
-        <li class="menu-item {{ request()->is('admin-pplg/logout') ? 'active' : '' }}">
+        <li class="menu-item {{ request()->is('admin-pplg/karya-siswa') ? 'active' : '' }}">
+            <a href="/admin-pplg/karya-siswa" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-laptop"></i>
+                <div data-i18n="Analytics">Karya Siswa</div>
+            </a>
+        </li>
+        {{-- <li class="menu-item {{ request()->is('admin-pplg/logout') ? 'active' : '' }}">
             <a href="/logout" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-log-out"></i>
                 <div data-i18n="Analytics">Logout</div>
             </a>
-        </li>
+        </li> --}}
     </ul>
 </aside>
 <!-- / Menu -->

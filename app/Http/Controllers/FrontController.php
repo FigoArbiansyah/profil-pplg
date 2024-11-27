@@ -14,6 +14,7 @@ use App\Models\Mapel;
 use App\Models\Article;
 use App\Models\Teacher;
 use App\Models\Alumni;
+use App\Models\StudentPortfolio;
 
 class FrontController extends Controller
 {
@@ -35,8 +36,10 @@ class FrontController extends Controller
         $articles = $articlesQuery->slice(1, 3);
         $teachers = Teacher::get();
         $alumnis = Alumni::get();
+        $studentsPortfolio = StudentPortfolio::orderBy('created_at', 'desc');
+        $studentsPortfolio = $studentsPortfolio->limit(6)->get();
 
-        return view("index", compact("school", "major", "jumbotrons", "about", "skills", "softwares", "mapels", "big_article", "articles", "teachers", "alumnis"));
+        return view("index", compact("school", "major", "jumbotrons", "about", "skills", "softwares", "mapels", "big_article", "articles", "teachers", "alumnis", 'studentsPortfolio'));
     }
 
     public function article() {
@@ -65,5 +68,25 @@ class FrontController extends Controller
                     ->get();
 
         return view("detail-article", compact("articles", "article"));
+    }
+
+    public function karya_siswa() {
+        $major = Major::latest()->first() ?? null;
+        $studentsPortfolio = DB::table('student_portfolios')
+                    ->orderBy('id', 'desc')
+                    ->paginate(9);
+
+        return view("karya-siswa", compact("studentsPortfolio", "major"));
+    }
+
+    public function detail_karya_siswa($id) {
+        // $major = Major::latest()->first() ?? null;
+        $item = DB::table('student_portfolios')
+                    ->join('schools', 'student_portfolios.school_id', '=', 'schools.id')
+                    ->where('student_portfolios.id', $id)
+                    ->select('student_portfolios.*', 'schools.school_name as school_name')
+                    ->first();
+
+        return view("detail-karya-siswa", compact("item"));
     }
 }
