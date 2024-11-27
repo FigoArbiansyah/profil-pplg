@@ -362,5 +362,14 @@
     </footer>
 
     <script src="{{ asset('fontawesome/js/all.min.js') }}"></script>
+    <script>
+      const toggleNavbarItems = () => {
+        const navBarItems = document.getElementById("nav-bar-items");
+        navBarItems.classList.toggle("hidden");
+        navBarItems.classList.toggle("max-md:grid");
+        document.getElementById("swiper").classList.toggle("-z-10");
+        document.querySelector(".bar").classList.toggle("text-indigo-500");
+      };
+    </script>
   </body>
 </html>
