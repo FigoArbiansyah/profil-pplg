@@ -43,15 +43,21 @@
                                 {{ $item->school_name ?? '' }}
                             </p>
                             <div class="flex justify-center my-3 space-x-4">
-                                <a href="{{ $item->student_instagram_url }}" target="_blank" class="text-pink-500 hover:opacity-75">
-                                    <i class="fa-brands fa-instagram fa-2x"></i>
-                                </a>
-                                <a href="{{ $item->student_linkedin_url }}" target="_blank" class="text-blue-700 hover:opacity-75">
-                                    <i class="fa-brands fa-linkedin fa-2x"></i>
-                                </a>
-                                <a href="{{ $item->student_github_url }}" target="_blank" class="text-gray-800 hover:opacity-75">
-                                    <i class="fa-brands fa-github fa-2x"></i>
-                                </a>
+                                @if (isset($item->student_instagram_url))
+                                    <a href="{{ $item->student_instagram_url }}" target="_blank" class="text-pink-500 hover:opacity-75">
+                                        <i class="fa-brands fa-instagram fa-2x"></i>
+                                    </a>
+                                @endif
+                                @if (isset($item->student_linkedin_url))
+                                    <a href="{{ $item->student_linkedin_url }}" target="_blank" class="text-blue-700 hover:opacity-75">
+                                        <i class="fa-brands fa-linkedin fa-2x"></i>
+                                    </a>
+                                @endif
+                                @if (isset($item->student_github_url))
+                                    <a href="{{ $item->student_github_url }}" target="_blank" class="text-gray-800 hover:opacity-75">
+                                        <i class="fa-brands fa-github fa-2x"></i>
+                                    </a>
+                                @endif
                             </div>
                         </div>
                         <img src="{{ asset('storage/images/' . $item->student_image) }}" alt="{{ $item->student_name }}" class="w-full aspect-square object-cover rounded-full border border-8 border-[#FFD700]"> <!-- Mengganti warna border menjadi kuning -->
