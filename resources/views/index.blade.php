@@ -862,6 +862,37 @@
             </div>
         </section>
 
+        <section id="karya-siswa" class="md:px-20 px-5 pt-5 pb-14">
+            <div>
+            <h3 class="text-3xl font-bold">Karya Siswa</h3>
+            <span class="block w-14 h-3 bg-indigo-500 -mt-3"></span>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-8">
+            <!-- Start Card -->
+            @foreach ($studentsPortfolio as $item)
+                <div class="transition-transform transform _hover:scale-[1.01]">
+                    <a href="/karya-siswa/{{ $item->id }}">
+                        <img src="{{ asset('storage/images/' . $item->thumbnail) }}" alt="{{ $item->title }}" class="w-full aspect-video object-cover rounded-md">
+                        <h4 class="text-lg font-semibold mt-3">{{ $item->title }}</h4>
+                        <p class="text-slate-700 mt-2">{{ Str::limit($item->description, 100) }}</p>
+                        <p class="text-indigo-600 mt-2 text-sm">Oleh: {{ $item->student_name }}</p>
+                    </a>
+                </div>
+            @endforeach
+            <!-- End Card -->
+            </div>
+
+            {{-- <div class="flex justify-center mt-4">
+                {{ $studentsPortfolio->links('pagination::tailwind') }}
+            </div> --}}
+            <div class="mt-10 flex w-full justify-center">
+                <a href="/karya-siswa" class="p-4 inline-block mx-auto bg-[#6366F1] text-slate-100 transition duration-300 ease-in-out transform hover:bg-[#4f46e1] hover:scale-105 shadow-lg">
+                    Lihat lebih banyak
+                </a>
+            </div>
+        </section>
+
         <!-- Alumni -->
         <section id="alumni-kami" class="md:px-20 px-5 pb-14">
             <div>
@@ -903,37 +934,6 @@
 
             <!-- If we need scrollbar -->
             <!-- <div class="swiper-scrollbar"></div> -->
-            </div>
-        </section>
-
-        <section id="karya-siswa" class="md:px-20 px-5 pt-5 pb-20">
-            <div>
-            <h3 class="text-3xl font-bold">Karya Siswa</h3>
-            <span class="block w-14 h-3 bg-indigo-500 -mt-3"></span>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8 mt-8">
-            <!-- Start Card -->
-            @foreach ($studentsPortfolio as $item)
-                <div class="transition-transform transform _hover:scale-[1.01]">
-                    <a href="/karya-siswa/{{ $item->id }}">
-                        <img src="{{ asset('storage/images/' . $item->thumbnail) }}" alt="{{ $item->title }}" class="w-full aspect-video object-cover rounded-md">
-                        <h4 class="text-lg font-semibold mt-3">{{ $item->title }}</h4>
-                        <p class="text-slate-700 mt-2">{{ Str::limit($item->description, 100) }}</p>
-                        <p class="text-indigo-600 mt-2 text-sm">Oleh: {{ $item->student_name }}</p>
-                    </a>
-                </div>
-            @endforeach
-            <!-- End Card -->
-            </div>
-
-            {{-- <div class="flex justify-center mt-4">
-                {{ $studentsPortfolio->links('pagination::tailwind') }}
-            </div> --}}
-            <div class="mt-10 flex w-full justify-center">
-                <a href="/karya-siswa" class="p-4 inline-block mx-auto bg-[#6366F1] text-slate-100 transition duration-300 ease-in-out transform hover:bg-[#4f46e1] hover:scale-105 shadow-lg">
-                    Lihat lebih banyak
-                </a>
             </div>
         </section>
     </main>
