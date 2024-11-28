@@ -65,7 +65,7 @@
                     <div class="row">
                         <div class="col mb-3">
                             <label for="yt_embed_url" class="form-label">YouTube Embed URL</label>
-                            <input type="text" id="yt_embed_url" class="form-control" name="yt_embed_url" value="{{ old('yt_embed_url') }}" required>
+                            <input type="text" id="yt_embed_url" class="form-control" name="yt_embed_url" value="{{ old('yt_embed_url') }}">
                             @error('yt_embed_url')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror

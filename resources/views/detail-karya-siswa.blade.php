@@ -76,11 +76,21 @@
                                 <p class="text-base">{{ $item->company_name }}</p>
                             </div>
                         </div>
-                        <div class="mt-8">
-                            <div class="border border-8 rounded-lg border-white">
-                                <iframe width="560" height="auto" src="{{ $item->yt_embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="aspect-video w-full" allowfullscreen></iframe>
+                        @if (isset($item->yt_embed_url) || isset($item->thumbnail))
+                            <div class="mt-8">
+                                <div class="border border-8 rounded-lg border-white">
+                                    @if (isset($item->yt_embed_url))
+                                        <iframe width="560" height="auto" src="{{ $item->yt_embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="aspect-video w-full" allowfullscreen></iframe>
+                                    @elseif (isset($item->thumbnail))
+                                        <img
+                                            src="{{ asset('storage/images/' . $item->thumbnail) }}"
+                                            alt="{{ $item->title }}"
+                                            class="w-full object-contain"
+                                        >
+                                    @endif
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

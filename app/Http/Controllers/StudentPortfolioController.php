@@ -44,7 +44,7 @@ class StudentPortfolioController extends Controller
             "thumbnail" => ['required', 'image', 'mimes:png,jpg,jpeg'],
             "is_intern_project" => ['nullable', 'boolean'],
             "company_name" => ['required_if:is_intern_project,true', 'nullable'],
-            "yt_embed_url" => ['required', 'url'],
+            "yt_embed_url" => ['nullable', 'url'],
             "student_instagram_url" => ['nullable', 'url'],
             "student_linkedin_url" => ['nullable', 'url'],
             "student_github_url" => ['nullable', 'url'],
@@ -76,7 +76,7 @@ class StudentPortfolioController extends Controller
         $data->student_image = $student_image;
         $data->is_intern_project = isset($request->company_name) ? 1 : 0;;
         $data->company_name = $request->company_name;
-        $data->yt_embed_url = $request->yt_embed_url;
+        $data->yt_embed_url = isset($request->yt_embed_url) ? $request->yt_embed_url : '-';
         $data->student_instagram_url = $request->student_instagram_url;
         $data->student_linkedin_url = $request->student_linkedin_url;
         $data->student_github_url = $request->student_github_url;
@@ -94,7 +94,7 @@ class StudentPortfolioController extends Controller
             "thumbnail" => ['image', 'mimes:png,jpg,jpeg'],
             "is_intern_project" => ['nullable', 'boolean'],
             "company_name" => ['required_if:is_intern_project,true', 'nullable'],
-            "yt_embed_url" => ['required', 'url'],
+            "yt_embed_url" => ['nullable', 'url'],
             "student_instagram_url" => ['nullable', 'url'],
             "student_linkedin_url" => ['nullable', 'url'],
             "student_github_url" => ['nullable', 'url'],
@@ -127,7 +127,7 @@ class StudentPortfolioController extends Controller
         $data->student_image = $student_image;
         $data->is_intern_project = isset($request->company_name) ? 1 : 0;
         $data->company_name = $request->company_name;
-        $data->yt_embed_url = $request->yt_embed_url;
+        $data->yt_embed_url = isset($request->yt_embed_url) ? $request->yt_embed_url : '-';
         $data->student_instagram_url = $request->student_instagram_url;
         $data->student_linkedin_url = $request->student_linkedin_url;
         $data->student_github_url = $request->student_github_url;
