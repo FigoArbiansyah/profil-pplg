@@ -54,7 +54,7 @@
                                 </a>
                             </div>
                         </div>
-                        <img src="{{ asset('storage/images/' . $item->student_image) }}" alt="{{ $item->student_name }}" class="w-full aspect-square rounded-full border border-8 border-[#FFD700]"> <!-- Mengganti warna border menjadi kuning -->
+                        <img src="{{ asset('storage/images/' . $item->student_image) }}" alt="{{ $item->student_name }}" class="w-full aspect-square object-cover rounded-full border border-8 border-[#FFD700]"> <!-- Mengganti warna border menjadi kuning -->
                     </div>
                 </div>
                 <div class="md:col-span-3">
@@ -79,7 +79,7 @@
                         @if (isset($item->yt_embed_url) || isset($item->thumbnail))
                             <div class="mt-8">
                                 <div class="border border-8 rounded-lg border-white">
-                                    @if (isset($item->yt_embed_url))
+                                    @if (isset($item->yt_embed_url) && $item->yt_embed_url !== '-')
                                         <iframe width="560" height="auto" src="{{ $item->yt_embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="aspect-video w-full" allowfullscreen></iframe>
                                     @elseif (isset($item->thumbnail))
                                         <img
