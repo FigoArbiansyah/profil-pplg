@@ -873,7 +873,7 @@
             @foreach ($studentsPortfolio as $item)
                 <div class="transition-transform transform _hover:scale-[1.01]">
                     <a href="/karya-siswa/{{ $item->id }}">
-                        <img src="{{ asset('storage/images/' . $item->thumbnail) }}" alt="{{ $item->title }}" class="w-full aspect-video object-contain rounded-md">
+                        <img src="{{ asset('storage/images/' . $item->thumbnail) }}" alt="{{ $item->title }}" class="w-full object-contain rounded-md">
                         <h4 class="text-lg font-semibold mt-3">{{ $item->title }}</h4>
                         <p class="text-slate-700 mt-2">{{ Str::limit($item->description, 100) }}</p>
                         <p class="text-indigo-600 mt-2 text-sm">Oleh: {{ $item->student_name }}</p>
